@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectCoverflow, Virtual } from "swiper/modules";
@@ -29,7 +29,9 @@ export default function Home() {
       <main className="flex flex-col space-y-10">
          {/* Navigation Bar */}
          <nav className="w-full bg-[#181818] py-4 px-6 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-            <h1 className="text-xl font-bold">Brand</h1>
+            <h1 className="text-xl playwrite-it-moderna text-foreground font-bold">
+               Miran Oil
+            </h1>
             <div className="hidden md:flex space-x-6">
                <Link
                   href="#home"
