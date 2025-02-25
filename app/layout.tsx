@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
    title: "Miran oil",
    description: "Browse your dream!",
+   icons: "/favicon.ico",
 };
 
 export default function RootLayout({
