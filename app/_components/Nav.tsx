@@ -38,6 +38,12 @@ const Nav = () => {
             >
                FAQ
             </Link>
+            <Link
+               href="#contact"
+               className="text-white hover:text-[#e7c87f]"
+            >
+               Contact
+            </Link>
          </div>
          <button
             className="md:hidden"
@@ -85,6 +91,13 @@ const Nav = () => {
                      onClick={() => setMenuOpen(false)}
                   >
                      FAQ
+                  </Link>
+                  <Link
+                     href="#contact"
+                     className="text-white hover:text-[#e7c87f]"
+                     onClick={() => setMenuOpen(false)}
+                  >
+                     Contact
                   </Link>
                </motion.div>
             )}
