@@ -14,7 +14,7 @@ const Home = () => {
             <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
             <div
                id="home"
-               className="flex flex-col bg-cover bg-center bg-[url(/assets/bg.png)] h-full  items-center justify-center w-full text-center pt-8 "
+               className="flex flex-col bg-cover bg-center bg-[url(/assets/background.png)] h-full  items-center justify-center w-full text-center pt-8 "
             >
                {/* Wrapper to ensure backdrop blur works */}
                <div className="relative w-full overflow-hidden">
