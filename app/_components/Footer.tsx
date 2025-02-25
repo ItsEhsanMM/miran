@@ -16,24 +16,26 @@ const Footer = () => {
                alt="Miran Oil"
             />
             <p>
-               Miran Oil provides premium, sustainable oil solutions tailored to
-               meet your needs with unmatched quality and reliability.
+               <span className="font-extrabold">Miran Oil</span> provides
+               premium, sustainable oil solutions tailored to meet your needs
+               with unmatched <span className="font-extrabold">quality</span>{" "}
+               and <span className="font-extrabold">reliability</span>.
             </p>
          </div>
-         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-            <h1>Contact Info</h1>
+         <h1>Contact Info</h1>
+         <div className="grid grid-cols-1 sm:grid-cols-2 sm:place-items-center gap-6 mt-6">
             <Link
                href={"geo:35.707526, 51.340588"}
                target="_blank"
                rel="noopener noreferrer"
-               className=" flex items-center space-x-3"
+               className=" flex  space-x-3"
             >
                <MapPin className="w-6 h-6 text-[#e7c87f]" />
                <p className="text-gray-300 hover:text-[#e7c87f]">
                   Tehran, Iran, Tarasht, Akbari St, No. 19, Unit 2
                </p>
             </Link>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-start w-full space-x-3">
                <Phone className="w-6 h-6 text-[#e7c87f]" />
                <Link
                   href="tel:02166012941"
@@ -42,7 +44,7 @@ const Footer = () => {
                   021 - 66012941
                </Link>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex space-x-3">
                <Phone className="w-6 h-6 text-[#e7c87f]" />
                <Link
                   href="tel:+971504982699"

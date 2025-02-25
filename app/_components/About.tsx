@@ -8,10 +8,11 @@ const About = () => {
             About Us
          </h2>
          <p className="text-gray-300 max-w-2xl mx-auto mb-4">
-            We are dedicated to providing high-quality motor oil that ensures
-            the best performance for your engine. With years of expertise in
-            lubricant technology, we guarantee premium protection and
-            efficiency.
+            We are dedicated to providing{" "}
+            <span className="font-extrabold">high-quality motor oil</span> that
+            ensures the best performance for your engine. With years of
+            expertise in lubricant technology, we guarantee premium protection
+            and efficiency.
          </p>
 
          <iframe

@@ -32,10 +32,12 @@ const Home = () => {
             </div>
          </motion.div>
          <p className="text-lg text-center text-gray-300 max-w-3xl">
-            Unlock superior engine performance with our high-quality motor oil.
+            Unlock superior engine performance with our{" "}
+            <span className="font-extrabold">high-quality motor oil</span>.
             Designed for maximum protection, reduced friction, and improved
-            efficiency, our oil ensures your vehicle runs at its best in all
-            conditions.
+            efficiency, our
+            <span className="font-extrabold"> oil</span> ensures your vehicle
+            runs at its best in all conditions.
          </p>
       </section>
    );
