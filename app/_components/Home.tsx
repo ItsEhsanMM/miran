@@ -4,33 +4,35 @@ import { motion } from "framer-motion";
 
 const Home = () => {
    return (
-      <section
-         id="home"
-         className="flex flex-col  items-center justify-center text-center pt-8 space-y-6"
-      >
-         <motion.div
+      <section className="flex flex-col items-center justify-center space-y-6">
+         <motion.section
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full px-4 sm:px-8"
+            className="w-full px-4 h-screen sm:px-8 relative"
          >
-            {/* Wrapper to ensure backdrop blur works */}
-            <div className="relative w-full rounded-3xl overflow-hidden">
-               {/* Background Image */}
-               <div className="absolute inset-0 bg-[url('/assets/ck-4.jpeg')] bg-cover bg-center" />
-               {/* Overlay with Blur */}
-               <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-               {/* Content */}
-               <div className="relative flex flex-col items-center justify-center text-center p-8 space-y-6">
-                  <h1 className="text-[clamp(0.5rem,8vw,4rem)] font-medium drop-shadow-lg">
-                     Welcome
-                  </h1>
-                  <h2 className="text-5xl font-bold text-foreground">
-                     Miran Oil
-                  </h2>
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+            <div
+               id="home"
+               className="flex flex-col bg-cover bg-center bg-[url(/assets/bg.png)] h-full  items-center justify-center w-full text-center pt-8 "
+            >
+               {/* Wrapper to ensure backdrop blur works */}
+               <div className="relative w-full overflow-hidden">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 " />
+                  {/* Overlay with Blur */}
+                  {/* Content */}
+                  <div className="relative flex flex-col items-center justify-center text-center p-8 space-y-6">
+                     <h1 className="text-[clamp(0.5rem,10vw,4rem)] font-medium drop-shadow-lg">
+                        Welcome
+                     </h1>
+                     <h2 className="text-[clamp(0.5rem,15vw,4rem)] font-bold text-foreground">
+                        Miran Oil
+                     </h2>
+                  </div>
                </div>
             </div>
-         </motion.div>
+         </motion.section>
          <p className="text-lg text-center text-gray-300 max-w-3xl">
             Unlock superior engine performance with our{" "}
             <span className="font-extrabold">high-quality motor oil</span>.
