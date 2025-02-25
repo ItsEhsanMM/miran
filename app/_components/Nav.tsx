@@ -27,10 +27,10 @@ const Nav = () => {
                Products
             </Link>
             <Link
-               href="#contact"
+               href="#about"
                className="text-white hover:text-[#e7c87f]"
             >
-               Contact
+               About
             </Link>
          </div>
          <button
@@ -67,11 +67,11 @@ const Nav = () => {
                      Products
                   </Link>
                   <Link
-                     href="#contact"
+                     href="#about"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >
-                     Contact
+                     About
                   </Link>
                </motion.div>
             )}
