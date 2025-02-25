@@ -25,7 +25,10 @@ export default function FAQ() {
    ];
 
    return (
-      <div className="w-full mx-auto p-6 rounded-lg shadow-lg">
+      <section
+         id="faq"
+         className="w-full mx-auto p-6 rounded-lg shadow-lg"
+      >
          <h2 className="text-3xl font-bold text-center mb-8">
             Frequently Asked Questions
          </h2>
@@ -49,6 +52,6 @@ export default function FAQ() {
                </AccordionItem>
             ))}
          </Accordion>
-      </div>
+      </section>
    );
 }
