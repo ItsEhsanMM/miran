@@ -32,7 +32,7 @@ const Footer = () => {
             >
                <MapPin className="w-6 h-6 text-[#e7c87f]" />
                <p className="text-gray-300 hover:text-[#e7c87f]">
-                  Tehran, Iran, Tarasht, Akbari St, No. 19, Unit 2
+                  Unit 2, No. 19, Akbari Street, Tarasht, Tehran, Iran
                </p>
             </Link>
             <div className="flex items-start w-full space-x-3">
