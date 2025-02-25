@@ -23,8 +23,8 @@ const Home = () => {
                   {/* Overlay with Blur */}
                   {/* Content */}
                   <div className="relative flex flex-col items-center justify-center text-center p-8 space-y-6">
-                     <h1 className="text-[clamp(0.5rem,10vw,4rem)] font-medium drop-shadow-lg">
-                        Welcome
+                     <h1 className="text-[clamp(0.5rem,10vw,2rem)] font-medium drop-shadow-lg">
+                        With Miran, Your Engine Is Always Ready to Perform.
                      </h1>
                      <h2 className="text-[clamp(0.5rem,15vw,4rem)] font-bold text-foreground">
                         Miran Oil
@@ -33,7 +33,7 @@ const Home = () => {
                </div>
             </div>
          </motion.section>
-         <p className="text-lg text-center text-gray-300 max-w-3xl">
+         <p className="text-lg text-justify px-4 text-gray-300 max-w-3xl">
             Unlock superior engine performance with our{" "}
             <span className="font-extrabold">high-quality motor oil</span>.
             Designed for maximum protection, reduced friction, and improved
