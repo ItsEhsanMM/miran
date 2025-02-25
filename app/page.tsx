@@ -3,6 +3,7 @@ import Home from "./_components/Home";
 import Products from "./_components/Products";
 import Footer from "./_components/Footer";
 import About from "./_components/About";
+import FAQ from "./_components/FAQ";
 
 export default function Page() {
    return (
@@ -11,6 +12,7 @@ export default function Page() {
          <Home />
          <Products />
          <About />
+         <FAQ />
          <Footer />
       </main>
    );
