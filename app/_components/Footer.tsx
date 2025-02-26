@@ -23,6 +23,14 @@ const Footer = () => {
             </p>
          </div>
          <h1>Contact Info</h1>
+         <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7653717852686!2d51.340544699999995!3d35.707391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8dfe0742eaf5b3%3A0xf4e5c1d9d07233bd!2z2KfYs9iq2KfZhiDYqtmH2LHYp9mG2Iwg2KrZh9ix2KfZhtiMINio2YTZiNin2LEg2LnYqNin2LMg2Kfaqdio2LHbjA!5e0!3m2!1sfa!2s!4v1740474918306!5m2!1sfa!2s"
+            className="w-full mt-6"
+            allowFullScreen
+            height="300"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+         ></iframe>
          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
             <Link
                href={"geo:35.707526, 51.340588"}
