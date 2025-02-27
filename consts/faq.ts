@@ -20,7 +20,7 @@ export const faqData = [
          "Delaying an oil change can lead to increased friction, sludge buildup, and reduced engine efficiency. Regular oil changes help maintain optimal engine performance and longevity.",
    },
    {
-      question: "5. Can I mix different oil grades or brands?",
+      question: "Can I mix different oil grades or brands?",
       answer:
          "Mixing different grades or brands is not recommended, as each oil has a unique formulation designed for specific engine requirements. For maximum performance and protection, always use the recommended Miran oil for your vehicle.",
    },
