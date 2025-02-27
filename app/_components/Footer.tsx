@@ -1,6 +1,8 @@
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
    return (
@@ -44,6 +46,15 @@ const Footer = () => {
                </p>
             </Link>
             <div className="flex items-start space-x-3">
+               <MdOutlineEmail className="w-6 h-6 text-[#e7c87f]" />
+               <Link
+                  href="mailto:info@miranoil.com"
+                  className="text-gray-300 hover:text-[#e7c87f]"
+               >
+                  info@miranoil.com
+               </Link>
+            </div>
+            <div className="flex items-start space-x-3">
                <Phone className="w-6 h-6 text-[#e7c87f]" />
                <Link
                   href="tel:02166012941"
@@ -62,7 +73,7 @@ const Footer = () => {
                </Link>
             </div>
             <div className="flex items-center space-x-3">
-               <MessageCircle className="w-6 h-6 text-[#e7c87f]" />
+               <FaWhatsapp className="w-6 h-6 text-[#e7c87f]" />
                <Link
                   href="https://wa.me/971504982699"
                   className="text-gray-300 hover:text-[#e7c87f]"

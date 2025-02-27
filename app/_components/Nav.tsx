@@ -15,25 +15,25 @@ const Nav = () => {
          </h1>
          <div className="hidden md:flex space-x-6">
             <Link
-               href="#home"
+               href="/#home"
                className="text-white hover:text-[#e7c87f]"
             >
                Home
             </Link>
             <Link
-               href="#products"
+               href="/#products"
                className="text-white hover:text-[#e7c87f]"
             >
                Products
             </Link>
             <Link
-               href="#about"
+               href="/#about"
                className="text-white hover:text-[#e7c87f]"
             >
                About
             </Link>
             <Link
-               href="#faq"
+               href="/faq"
                className="text-white hover:text-[#e7c87f]"
             >
                FAQ
@@ -65,28 +65,28 @@ const Nav = () => {
                   className="absolute top-14 right-6 bg-[#181818] shadow-lg rounded-lg p-4 flex flex-col space-y-4 md:hidden"
                >
                   <Link
-                     href="#hero"
+                     href="/#home"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >
                      Home
                   </Link>
                   <Link
-                     href="#products"
+                     href="/#products"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >
                      Products
                   </Link>
                   <Link
-                     href="#about"
+                     href="/#about"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >
                      About
                   </Link>
                   <Link
-                     href="#faq"
+                     href="/faq"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >

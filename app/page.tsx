@@ -1,7 +1,6 @@
 import Home from "./_components/Home";
 import Products from "./_components/Products";
 import About from "./_components/About";
-import FAQ from "./_components/FAQ";
 
 export default async function Page() {
    return (
@@ -9,7 +8,6 @@ export default async function Page() {
          <Home />
          <Products />
          <About />
-         <FAQ />
       </main>
    );
 }
