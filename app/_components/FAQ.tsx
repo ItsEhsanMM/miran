@@ -4,26 +4,9 @@ import {
    AccordionItem,
    AccordionTrigger,
 } from "@/components/ui/accordion";
+import { faqData } from "@/consts/faq";
 
 export default function FAQ() {
-   const faqData = [
-      {
-         question: "What products does Miran Oil offer?",
-         answer:
-            "Miran Oil provides a range of high-quality, sustainable oil products tailored for various industries and applications.",
-      },
-      {
-         question: "How can I purchase Miran Oil products?",
-         answer:
-            "You can purchase our products through our website or by contacting our sales team directly.",
-      },
-      {
-         question: "Are Miran Oil products environmentally friendly?",
-         answer:
-            "Yes, sustainability is at the core of our mission, and we ensure our products meet the highest environmental standards.",
-      },
-   ];
-
    return (
       <section
          id="faq"
@@ -47,7 +30,23 @@ export default function FAQ() {
                      {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="p-4 ">
-                     {faq.answer}
+                     {faq.answer.includes("•") ? (
+                        <ul className="list-disc list-inside space-y-4">
+                           {faq.answer
+                              .split("•")
+                              .slice(1)
+                              .map((item, i) => (
+                                 <li
+                                    key={i}
+                                    className="text-xl"
+                                 >
+                                    {item.trim()}
+                                 </li>
+                              ))}
+                        </ul>
+                     ) : (
+                        <p className="">{faq.answer}</p>
+                     )}
                   </AccordionContent>
                </AccordionItem>
             ))}
