@@ -20,22 +20,23 @@ export default function FAQ() {
             collapsible
             className="w-full space-y-4"
          >
-            {faqData.map((faq, index) => (
-               <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="  shadow-sm hover:shadow-md transition-shadow"
-               >
-                  <AccordionTrigger className="flex justify-between items-center w-full p-4 text-left text-lg font-semibold  hover:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500">
-                     {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="p-4 ">
-                     {faq.answer.includes("•") ? (
-                        <ul className="list-disc list-inside space-y-4">
-                           {faq.answer
-                              .split("•")
-                              .slice(1)
-                              .map((item, i) => (
+            {faqData.map((faq, index) => {
+               const hasBullets = faq.answer.includes("•");
+               const [intro, ...bulletPoints] = faq.answer.split("•");
+               return (
+                  <AccordionItem
+                     key={index}
+                     value={`item-${index}`}
+                     className="  shadow-sm hover:shadow-md transition-shadow"
+                  >
+                     <AccordionTrigger className="flex justify-between items-center w-full p-4 text-left text-lg font-semibold  hover:text-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500">
+                        {faq.question}
+                     </AccordionTrigger>
+                     <AccordionContent className="pl-4 space-y-2 ">
+                        {hasBullets && intro.trim() && <p>{intro.trim()}</p>}
+                        {hasBullets ? (
+                           <ul className="list-disc list-inside pl-2 space-y-1">
+                              {bulletPoints.map((item, i) => (
                                  <li
                                     key={i}
                                     className="text-xl"
@@ -43,13 +44,14 @@ export default function FAQ() {
                                     {item.trim()}
                                  </li>
                               ))}
-                        </ul>
-                     ) : (
-                        <p className="">{faq.answer}</p>
-                     )}
-                  </AccordionContent>
-               </AccordionItem>
-            ))}
+                           </ul>
+                        ) : (
+                           <p>{faq.answer}</p>
+                        )}
+                     </AccordionContent>
+                  </AccordionItem>
+               );
+            })}
          </Accordion>
       </section>
    );
