@@ -3,10 +3,11 @@ import { productsDetail } from "@/consts/products";
 import Image from "next/image";
 import React from "react";
 
-const page = ({ params }: { params: { product: string } }) => {
+const Page = async ({ params }: { params: Promise<{ product: string }> }) => {
    const product = productsDetail.find(
-      (p) => p.id === parseInt(params.product)
+      async (p) => p.id === parseInt((await params).product)
    );
+
    if (!product) {
       return (
          <div className="my-24 w-full text-center">
@@ -94,4 +95,4 @@ const page = ({ params }: { params: { product: string } }) => {
       </section>
    );
 };
-export default page;
+export default Page;
