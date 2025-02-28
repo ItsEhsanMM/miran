@@ -45,7 +45,7 @@ const Products = ({ products }: ProductsProps) => {
             modules={[Navigation, EffectCoverflow]}
             className="size-full"
          >
-            {products.map((product, index) => (
+            {products.map((product) => (
                <SwiperSlide
                   key={product.id} // Use product.id as the key
                   className="flex justify-center"
