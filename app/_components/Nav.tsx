@@ -29,7 +29,7 @@ const Nav = () => {
                Products
             </Link>
             <Link
-               href="/#about"
+               href="/about"
                className="text-white hover:text-[#e7c87f]"
             >
                About
@@ -81,7 +81,7 @@ const Nav = () => {
                      Products
                   </Link>
                   <Link
-                     href="/#about"
+                     href="/about"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >
