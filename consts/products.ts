@@ -31,26 +31,35 @@ export const productsDetail = [
       src: "/assets/hidraulic.jpeg",
       alt: "Hidraulic Oil | ISO VG 68HL",
       type: "Hydraulic Oil",
-      packageSize: "20 Liters",
       specifications: {
          viscosity: "ISO VG 68",
-         "performance Level": [
-            "DIN 51524 Part 1 (HL)",
-            "Denison HF-0",
-            "ISIRI 6423",
-         ],
-         "suitable For": "High-pressure hydraulic systems",
+         "performance Level": `
+         DIN 51524 Part 1 (HL),
+         Denison HF-0,
+         ISIRI 6423
+         `,
+         "package Size": "20 Liters",
+         Application:
+            "suitable For high-pressure hydraulic systems requiring HL category oils",
+         Features:
+            "High oxidation stability, excellent wear protection, good anti-foaming properties",
       },
-      features: [
-         "Excellent Stability at different temperatures",
-         "Anti-foam properties to prevent foam formation in the system",
-         "Protection of hydraulic systems against wear and corrosion",
-         "Excellent water resistance and contamination control in the system",
-      ],
-      applications: [
-         "High-performance hydraulic systems",
-         "Industrial equipment requiring strong protection against wear and oxidation",
-         "Heavy machinery, hydraulic pumps, and industrial equipment",
+      description:[
+         "Miran’s ISO VG 68 HL hydraulic oil is a high-performance lubricant designed for industrial and mobile hydraulic systems. With advanced formulation and superior base oils, this hydraulic oil meets DIN 51524 Part I (HL), Denison HF-0, and ISIRI 6423 standards, ensuring optimal system performance, extended equipment life, and excellent oxidation stability."
+         ,{
+            "Key Features": ['Superior oxidation stability for extended oil life',
+               'Excellent anti-wear properties to protect hydraulic components',
+               'Effective anti-foaming performance for smooth and consistent operation'
+               ,'High thermal stability for extreme working conditions'
+            ]
+         },
+         {
+            Packaging:"Available in 20-liter drums for industrial applications."
+         },
+         {
+            Applications:"Ideal for hydraulic systems requiring HL category oils, including:",
+            bulletData:["Industrial hydraulic systems","Mobile construction and earth-moving equipment","Hydraulic presses and manufacturing machinery"]
+         }
       ],
    },
 ];

@@ -2,26 +2,25 @@ const About = () => {
    return (
       <section
          id="about"
-         className="w-full py-8 px-4 sm:px-8 flex flex-col bg-[#181818] text-white text-center"
+         className="w-full py-8 px-4 sm:px-8 flex space-y-4 flex-col bg-[#181818] text-white text-center"
       >
          <div className="flex flex-col w-full">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#e7c87f] mb-6">
-               About Us
+               About Us – Miran Lubricants
             </h2>
             <p className="text-gray-300 text-lg text-justify px-4 mx-auto mb-4">
-               At Miran, we are committed to producing and delivering
-               high-quality motor oils that meet international standards. We
-               believe that superior engine performance, extended component
-               lifespan, and reduced maintenance costs are only achievable with
-               advanced and well-engineered lubricants. Utilizing cutting-edge
-               formulations, premium raw materials, and the latest technologies,
-               Miran products are designed to deliver optimal and consistent
-               performance, even under the most demanding conditions. With a
-               strong focus on research and development (R&D), we continuously
-               innovate and enhance our motor oil formulations to meet the
-               diverse needs of our customers. Our mission is to be your first
-               choice in the world of lubricants by prioritizing transparency,
-               quality, and innovation.
+               With years of experience in manufacturing and developing advanced
+               lubricants, Miran is recognized as one of the leading producers
+               of high-performance engine and industrial oils. By utilizing
+               cutting-edge technology, premium raw materials, and stringent
+               quality control processes, we ensure that our products deliver
+               the highest levels of performance and durability for modern
+               engines and industrial equipment. With a strong presence in
+               international markets and products that meet global standards,
+               Miran has become a trusted and reputable name in the lubricant
+               industry. We place great emphasis on innovation and research &
+               development (R&D) to continuously enhance and optimize our
+               formulations for superior efficiency and reliability.
             </p>
          </div>
          <div className="flex flex-col">
@@ -30,25 +29,38 @@ const About = () => {
             </h2>
             <ol className="flex text-lg flex-col text-start space-y-5 list-disc marker:font-bold px-6">
                <li className="pl-4 leading-8 -indent-3">
-                  Guaranteed Quality: Manufactured to international standards
-                  with rigorous quality control testing
+                  Years of expertise in manufacturing high-performance
+                  lubricants
                </li>
                <li className="pl-4 leading-8 -indent-3">
-                  Advanced Formulations: Enhanced with specialized additives to
-                  reduce wear, improve performance, and extend engine life
+                  Developed according to the latest global standards
                </li>
                <li className="pl-4 leading-8 -indent-3">
-                  Durability in Harsh Conditions: Suitable for high
-                  temperatures, urban traffic, and long-distance driving
+                  Innovative formulations with advanced additives for enhanced
+                  efficiency, reduced wear, and maximum engine protection
                </li>
                <li className="pl-4 leading-8 -indent-3">
-                  Customer Commitment: Providing expert consultation, technical
-                  support, and guaranteed product authenticity At Miran, we
-                  don’t just offer a product—we build lasting trust with our
-                  customers.
+                  Reliable performance in extreme conditions – suitable for high
+                  temperatures, heavy loads, and extended operational hours
+               </li>
+               <li className="pl-4 leading-8 -indent-3">
+                  A trusted supplier in international markets with a proven
+                  track record of successful exports
+               </li>
+               <li className="pl-4 leading-8 -indent-3">
+                  Commitment to quality, transparency, and expert technical
+                  support
                </li>
             </ol>
          </div>
+         <p className="text-gray-300 text-lg text-justify px-4 mx-auto mb-4">
+            At Miran, quality is not just a promise—it is the foundation of
+            everything we create. Our mission is to provide the best lubrication
+            solutions for industries worldwide.
+         </p>
+         <p className="text-gray-300 text-lg text-justify px-4 mx-auto mb-4">
+            Miran— Engineered for Excellence.
+         </p>
       </section>
    );
 };

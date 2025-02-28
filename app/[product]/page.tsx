@@ -1,23 +1,41 @@
 import Divider from "@/components/Divider";
+import {
+   Table,
+   TableBody,
+   TableCell,
+   TableHead,
+   TableHeader,
+   TableRow,
+} from "@/components/ui/table";
 import { productsDetail } from "@/consts/products";
 import Image from "next/image";
 import React from "react";
 
-const Page = async ({ params }: { params: Promise<{ product: string }> }) => {
-   const product = productsDetail.find(
-      async (p) => p.id === parseInt((await params).product)
-   );
+// Generate static paths based on the productsDetail array
+export async function generateStaticParams() {
+   return productsDetail.map((product) => ({
+      product: product.id.toString(), // Ensure the product ID is a string
+   }));
+}
+
+// Page component
+const Page = async (props: { params: Promise<{ product: string }> }) => {
+   const params = await props.params;
+   const productId = parseInt(params.product); // Convert the product ID to a number
+   const product = productsDetail.find((p) => p.id === productId); // Find the product by ID
 
    if (!product) {
       return (
          <div className="my-24 w-full text-center">
-            <h1>Product Not Found!</h1>;
+            <h1>Product Not Found!</h1>
          </div>
       );
    }
+
    return (
-      <section className="px-6 pb-10 mt-14 flex flex-col space-y-4">
+      <section className="px-6 pb-10 mt-20 flex flex-col space-y-4">
          <div className="flex flex-col items-center text-center space-y-5">
+            <h1>{product.name}</h1>
             <Image
                src={product.src}
                width={1024}
@@ -25,74 +43,38 @@ const Page = async ({ params }: { params: Promise<{ product: string }> }) => {
                alt={product.alt}
                className="w-full mt-4 rounded-lg overflow-hidden"
             />
-            <h1>{product.name}</h1>
             <Divider />
          </div>
-         <div className="flex flex-col px-2">
-            <div className="flex items-center space-x-2">
-               <h4>Category: </h4>
-               <p>{product.category}</p>
-            </div>
-            <div className="flex items-center space-x-2">
-               <h4>Type:</h4>
-               <p>{product.type}</p>
-            </div>
-            <div className="flex items-center space-x-2">
-               <h4>Package Size:</h4>
-               <p>{product.packageSize}</p>
-            </div>
+         <div>
+            <p>
+               A premium hydraulic oil engineered for industrial and mobile
+               hidraulic systems, ensuring superior performance, durability and
+               wear protection.
+            </p>
          </div>
-         <Divider />
-         <div className="flex flex-col space-y-4">
-            <h2>specifications:</h2>
-            <ul className="flex flex-col justify-center space-y-4 pl-4">
+         <Table className="rounded-lg border-gray-700 border">
+            <TableHeader>
+               <TableRow className="border-gray-700">
+                  <TableHead>Specification</TableHead>
+                  <TableHead>Details</TableHead>
+               </TableRow>
+            </TableHeader>
+            <TableBody>
                {Object.entries(product.specifications).map(
                   ([key, value], i) => (
-                     <React.Fragment key={i}>
-                        <li className="flex flex-col space-y-1 justify-center">
-                           <h4>{key}:</h4>
-                           <p className="ml-4">{value}</p>
-                        </li>
-                     </React.Fragment>
+                     <TableRow
+                        className="border-gray-700"
+                        key={i}
+                     >
+                        <TableCell>{key}</TableCell>
+                        <TableCell>{value}</TableCell>
+                     </TableRow>
                   )
                )}
-            </ul>
-         </div>
-         <Divider />
-         <div className="flex flex-col space-y-4">
-            <h2>Features:</h2>
-            <ul className="flex flex-col list-disc space-y-3 justify-center pl-8">
-               {product.features.map((item, i) => {
-                  return (
-                     <li
-                        className="text-lg font-medium"
-                        key={i}
-                     >
-                        {item}
-                     </li>
-                  );
-               })}
-            </ul>
-         </div>
-         <Divider />
-         <div className="flex flex-col space-y-3">
-            <h2>Applications:</h2>
-
-            <ul className="flex flex-col list-disc space-y-2 justify-center pl-8">
-               {product.applications.map((item, i) => {
-                  return (
-                     <li
-                        className="text-lg font-medium"
-                        key={i}
-                     >
-                        {item}
-                     </li>
-                  );
-               })}
-            </ul>
-         </div>
-         <Divider />
+            </TableBody>
+         </Table>
       </section>
    );
 };
+
 export default Page;
