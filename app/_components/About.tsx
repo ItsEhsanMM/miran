@@ -1,8 +1,10 @@
+import TeamMembers from "./TeamMembers";
+
 const About = () => {
    return (
       <section
          id="about"
-         className="w-full py-8 sm:px-8 flex space-y-4 flex-col bg-[#181818] text-white text-center"
+         className="w-full py-8 px-4 sm:px-8 flex space-y-4 flex-col bg-[#181818] text-white text-center"
       >
          <div className="flex flex-col w-full">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#e7c87f] mb-6">
@@ -61,6 +63,7 @@ const About = () => {
          <p className="text-gray-300 text-lg text-justify px-4 mx-auto mb-4">
             Miran— Engineered for Excellence.
          </p>
+         <TeamMembers />
       </section>
    );
 };
