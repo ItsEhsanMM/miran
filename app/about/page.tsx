@@ -7,11 +7,15 @@ const Page = () => {
       <>
          <div className="mt-20 flex flex-col px-4 space-y-4">
             <About />
-            <TeamImage
-               alt="Abbas Hayali"
-               role="Founder"
-               src="/assets/abbas-hayali.png"
-            />
+            <Divider />
+            <div className="text-center space-y-8">
+               <h1>Team Members</h1>
+               <TeamImage
+                  alt="Abbas Hayali"
+                  role="Founder"
+                  src="/assets/abbas-hayali.png"
+               />
+            </div>
          </div>
          <Divider />
       </>
