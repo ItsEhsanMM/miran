@@ -3,10 +3,14 @@ import Home from "./_components/Home";
 import Products from "./_components/Products";
 
 export default async function Page() {
+   const products = await fetch(`${process.env.URL_PREFIX}/products`).then(
+      (res) => res.json()
+   );
+
    return (
       <main className="flex flex-col space-y-10">
          <Home />
-         <Products />
+         <Products products={products} />
          <About />
       </main>
    );

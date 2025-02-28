@@ -2,7 +2,6 @@ export const productsDetail = [
    {
       id: 1,
       name: "10W-40 CI-4 Semi Synthetic Motor Oil",
-      src: "/assets/10w40.jpeg",
       alt: "10W40 CI-4",
       category: "Motor Oil",
       type: "Semi-Synthetic",
@@ -28,7 +27,6 @@ export const productsDetail = [
       id: 2,
       name: "Hydraulic Oil ISO VG 68HL",
       category: "Hydraulic Oil",
-      src: "/assets/hidraulic.jpeg",
       alt: "Hidraulic Oil | ISO VG 68HL",
       type: "Hydraulic Oil",
       specifications: {
@@ -69,41 +67,3 @@ export const teamMemberData =[{
    name:"Abbas Hayali",
    role:"Founder"
 }]
-
-export const images = [
-   {
-      id: 1,
-      src: "/assets/10w40.jpeg",
-      alt: "10W40 CI-4",
-   },
-   {
-      id: 2,
-      src: "/assets/hidraulic.jpeg",
-      alt: "Hidraulic Oil | ISO VG 68HL",
-   },
-   {
-      id: 3,
-      src: "/assets/20w50.jpeg",
-      alt: "20W50 | CH-4",
-   },
-   {
-      id: 4,
-      src: "/assets/cd50.jpeg",
-      alt: "CD-50",
-   },
-   {
-      id: 5,
-      src: "/assets/cd60.jpeg",
-      alt: "CD-60",
-   },
-   {
-      id: 6,
-      src: "/assets/ch-4.jpeg",
-      alt: "CH-4 15W40",
-   },
-   {
-      id: 7,
-      src: "/assets/15w40.jpeg",
-      alt: "15W40 | CI-4 PLUS",
-   },
-];

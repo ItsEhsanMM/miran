@@ -7,20 +7,56 @@ import {
    TableHeader,
    TableRow,
 } from "@/components/ui/table";
-import { productsDetail } from "@/consts/products";
 import Image from "next/image";
 import React from "react";
 
-// Page component
-const Page = async (props: { params: Promise<{ product: string }> }) => {
-   const params = await props.params;
-   const productId = parseInt(params.product); // Convert the product ID to a number
-   const product = productsDetail.find((p) => p.id === productId); // Find the product by ID
+// Define the type for the product
+type Product = {
+   id: number;
+   name: string;
+   alt: string;
+   category: string;
+   type: string;
+   packageSize: string;
+   specifications: Record<string, string | undefined>;
+   features: string[];
+   applications: string[];
+   description: (string | Record<string, string | string[]>)[];
+   imageUrl: string;
+};
 
-   if (!product) {
+const Page = async (props: { params: { product: string } }) => {
+   const { product } = await props.params;
+   const productId = parseInt(product);
+
+   let productData: Product | null = null;
+   let error: string | null = null;
+
+   try {
+      const response = await fetch(
+         `http://localhost:3000/api/products/${productId}`
+      );
+
+      if (!response.ok) {
+         throw new Error("Failed to fetch product");
+      }
+
+      const data = await response.json();
+      if (data.error) {
+         throw new Error(data.error);
+      }
+
+      productData = data.product;
+   } catch (err) {
+      console.error("Error fetching product:", err);
+      error = "Failed to load product";
+   }
+
+   // Handle errors or missing product
+   if (error || !productData) {
       return (
          <div className="my-24 w-full text-center">
-            <h1>Product Not Found!</h1>
+            <h1>{error || "Product Not Found!"}</h1>
          </div>
       );
    }
@@ -28,20 +64,22 @@ const Page = async (props: { params: Promise<{ product: string }> }) => {
    return (
       <section className="px-6 pb-10 mt-20 flex flex-col space-y-4">
          <div className="flex flex-col items-center text-center space-y-5">
-            <h1>{product.name}</h1>
-            <Image
-               src={product.src}
-               width={1024}
-               height={1080}
-               alt={product.alt}
-               className="w-full mt-4 rounded-lg overflow-hidden"
-            />
+            <h1>{productData.name}</h1>
+            {productData.imageUrl && (
+               <Image
+                  src={productData.imageUrl}
+                  width={1024}
+                  height={1080}
+                  alt={productData.alt}
+                  className="w-full mt-4 rounded-lg overflow-hidden"
+               />
+            )}
             <Divider />
          </div>
          <div>
             <p>
                A premium hydraulic oil engineered for industrial and mobile
-               hidraulic systems, ensuring superior performance, durability and
+               hydraulic systems, ensuring superior performance, durability, and
                wear protection.
             </p>
          </div>
@@ -53,7 +91,7 @@ const Page = async (props: { params: Promise<{ product: string }> }) => {
                </TableRow>
             </TableHeader>
             <TableBody>
-               {Object.entries(product.specifications).map(
+               {Object.entries(productData.specifications).map(
                   ([key, value], i) => (
                      <TableRow
                         className="border-gray-700"

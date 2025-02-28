@@ -8,13 +8,24 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
-import { images } from "@/consts/products";
 
-const Products = () => {
+// Define the Props interface
+interface ProductProps {
+   id: number;
+   imageUrl: string;
+   alt: string;
+}
+
+// Define the Props for the Products component
+interface ProductsProps {
+   products: ProductProps[]; // Array of ProductProps
+}
+
+const Products = ({ products }: ProductsProps) => {
    return (
       <section
          id="products"
-         className="w-full text-center "
+         className="w-full text-center"
       >
          <h2 className="text-3xl font-bold mb-6">Products</h2>
          <Swiper
@@ -34,26 +45,26 @@ const Products = () => {
             modules={[Navigation, EffectCoverflow]}
             className="size-full"
          >
-            {images.map((src, index) => (
+            {products.map((product, index) => (
                <SwiperSlide
-                  key={index}
+                  key={product.id} // Use product.id as the key
                   className="flex justify-center"
                >
-                  <Link href={`/${src.id}`}>
+                  <Link href={`/${product.id}`}>
                      <Card className="border-none flex flex-col items-center justify-center">
                         <CardHeader>
                            <Image
                               width={512}
                               height={512}
-                              src={src.src}
-                              alt={`Product ${index + 1}`}
+                              src={product.imageUrl}
+                              alt={product.alt}
                               loading="lazy"
-                              className="w-[80rem] max-h-96  object-cover rounded-xl shadow-lg"
+                              className="w-[80rem] max-h-96 object-cover rounded-xl shadow-lg"
                            />
                         </CardHeader>
                         <CardContent className="flex items-center justify-center rounded-lg border-none text-xl font-bold">
                            <p className="size-full flex items-center justify-center">
-                              {src.alt}
+                              {product.alt}
                            </p>
                         </CardContent>
                      </Card>
@@ -64,4 +75,5 @@ const Products = () => {
       </section>
    );
 };
+
 export default Products;
