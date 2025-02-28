@@ -16,12 +16,8 @@ const Home = () => {
                id="home"
                className="flex flex-col bg-cover bg-center bg-[url(/assets/background.png)] h-full  items-center justify-center w-full text-center pt-8 "
             >
-               {/* Wrapper to ensure backdrop blur works */}
                <div className="relative w-full overflow-hidden">
-                  {/* Background Image */}
                   <div className="absolute inset-0 " />
-                  {/* Overlay with Blur */}
-                  {/* Content */}
                   <div className="relative flex flex-col items-center justify-center text-center p-8 space-y-6">
                      <h1 className="text-[clamp(0.5rem,10vw,2rem)] font-medium drop-shadow-lg">
                         With Miran, Your Engine Is Always Ready to Perform.

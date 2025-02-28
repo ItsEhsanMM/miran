@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import React from "react";
 
-// Define the type for the product
 type Product = {
    id: number;
    name: string;
@@ -52,7 +51,6 @@ const Page = async (props: { params: { product: string } }) => {
       error = "Failed to load product";
    }
 
-   // Handle errors or missing product
    if (error || !productData) {
       return (
          <div className="my-24 w-full text-center">

@@ -9,16 +9,14 @@ import "swiper/css/navigation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
 
-// Define the Props interface
 interface ProductProps {
    id: number;
    imageUrl: string;
    alt: string;
 }
 
-// Define the Props for the Products component
 interface ProductsProps {
-   products: ProductProps[]; // Array of ProductProps
+   products: ProductProps[];
 }
 
 const Products = ({ products }: ProductsProps) => {
@@ -47,7 +45,7 @@ const Products = ({ products }: ProductsProps) => {
          >
             {products.map((product) => (
                <SwiperSlide
-                  key={product.id} // Use product.id as the key
+                  key={product.id}
                   className="flex justify-center"
                >
                   <Link href={`/${product.id}`}>
