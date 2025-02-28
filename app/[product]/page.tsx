@@ -11,13 +11,6 @@ import { productsDetail } from "@/consts/products";
 import Image from "next/image";
 import React from "react";
 
-// Generate static paths based on the productsDetail array
-export async function generateStaticParams() {
-   return productsDetail.map((product) => ({
-      product: product.id.toString(), // Ensure the product ID is a string
-   }));
-}
-
 // Page component
 const Page = async (props: { params: Promise<{ product: string }> }) => {
    const params = await props.params;

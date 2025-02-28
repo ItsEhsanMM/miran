@@ -1,6 +1,9 @@
 import TeamMembers from "./TeamMembers";
 
-const About = () => {
+const About = async () => {
+   const teamData = await fetch(`${process.env.URL_PREFIX}/team`).then((res) =>
+      res.json()
+   );
    return (
       <section
          id="about"
@@ -63,7 +66,22 @@ const About = () => {
          <p className="text-gray-300 text-lg text-justify px-4 mx-auto mb-4">
             Miran— Engineered for Excellence.
          </p>
-         <TeamMembers />
+         {teamData.teamMembers.map(
+            (data: {
+               id: number;
+               imageUrl: string;
+               name: string;
+               role: string;
+            }) => (
+               <TeamMembers
+                  key={data.id}
+                  id={data.id}
+                  imageUrl={data.imageUrl}
+                  name={data.name}
+                  role={data.role}
+               />
+            )
+         )}
       </section>
    );
 };

@@ -64,6 +64,12 @@ export const productsDetail = [
    },
 ];
 
+export const teamMemberData =[{
+   id:1,
+   name:"Abbas Hayali",
+   role:"Founder"
+}]
+
 export const images = [
    {
       id: 1,
