@@ -3,6 +3,8 @@ import { S3Client, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/clien
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { productsDetail } from '@/consts/products';
 
+export const dynamic = "force-static"
+
 const s3Client = new S3Client({
   region: 'default', 
   endpoint: process.env.LIARA_ENDPOINT, 

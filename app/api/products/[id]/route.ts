@@ -3,6 +3,14 @@ import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { productsDetail } from '@/consts/products';
 
+export const dynamic = "force-static"
+
+
+export async function generateStaticParams() {
+  return productsDetail.map((product) => ({
+     id: product.id.toString(),
+  }));
+}
 
 const s3Client = new S3Client({
     region: 'default', 
@@ -16,9 +24,9 @@ const s3Client = new S3Client({
   
   export async function GET(
     _: Request,
-    { params }: { params: { id: string } }
+     params : { params: Promise<{ id: string }> }
   ) {
-    const { id } = await params;
+    const { id } = await params.params
   
     if (!id) {
       return NextResponse.json({ error: 'Product ID is required' }, { status: 400 });

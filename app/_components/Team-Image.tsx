@@ -10,6 +10,7 @@ const TeamImage = ({ alt, role, src }: Props) => {
    return (
       <div className="flex flex-col h-72 text-center items-center justify-between max-w-40">
          <Image
+            loading="lazy"
             src={src}
             alt={alt}
             width={512}

@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import TeamMembers from "./TeamMembers";
 import Link from "next/link";
 import Divider from "@/components/Divider";
 

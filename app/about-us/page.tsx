@@ -1,9 +1,11 @@
 import Link from "next/link";
 import TeamMembers from "../_components/TeamMembers";
 
+export const dynamic = "force-dynamic";
+
 const page = async () => {
-   const teamData = await fetch(`${process.env.URL_PREFIX}/team`).then((res) =>
-      res.json()
+   const teamData = await fetch(`${process.env.URL_PREFIX}/team`, {}).then(
+      (res) => res.json()
    );
 
    return (

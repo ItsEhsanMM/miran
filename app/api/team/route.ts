@@ -7,6 +7,8 @@ import {
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { teamMemberData } from "@/consts/products";
 
+export const dynamic = "force-static"
+
 const s3Client = new S3Client({
    region: "default",
    endpoint: process.env.LIARA_ENDPOINT,
