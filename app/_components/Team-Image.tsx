@@ -8,7 +8,7 @@ interface Props {
 
 const TeamImage = ({ alt, role, src }: Props) => {
    return (
-      <div className="flex flex-col items-center max-w-40">
+      <div className="flex flex-col h-72 text-center items-center justify-between max-w-40">
          <Image
             src={src}
             alt={alt}
@@ -17,7 +17,7 @@ const TeamImage = ({ alt, role, src }: Props) => {
             className="rounded-full"
          />
          <h5>{alt}</h5>
-         <h6>{role}</h6>
+         <h6 className="text-foreground">{role}</h6>
       </div>
    );
 };

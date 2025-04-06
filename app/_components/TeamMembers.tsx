@@ -1,22 +1,32 @@
 import TeamImage from "./Team-Image";
 
-interface Props {
+interface TeamMember {
    id: number;
    name: string;
    role: string;
    imageUrl: string;
 }
 
-const TeamMembers = (values: Props) => {
+interface Props {
+   values: TeamMember[];
+}
+
+const TeamMembers = ({ values }: Props) => {
    return (
-      <section className="text-center space-y-8">
+      <section className="flex flex-col gap-8 justify-start items-start">
          <h1>Team Members</h1>
-         <TeamImage
-            alt={values.name}
-            role={values.role}
-            src={values.imageUrl}
-         />
+         <div className="sm:flex gap-8">
+            {values.map((member) => (
+               <TeamImage
+                  key={member.id}
+                  alt={member.name}
+                  role={member.role}
+                  src={member.imageUrl}
+               />
+            ))}
+         </div>
       </section>
    );
 };
+
 export default TeamMembers;
