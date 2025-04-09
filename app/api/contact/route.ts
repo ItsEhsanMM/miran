@@ -32,7 +32,7 @@ export async function OPTIONS() {
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": "*", // Or restrict to your frontend domain
+      "Access-Control-Allow-Origin": "https://miranoil.com", // Allow your frontend domain here
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     },
@@ -76,7 +76,7 @@ export async function POST(req: Request) {
     return new NextResponse(JSON.stringify({ success: true }), {
       status: 200,
       headers: {
-        "Access-Control-Allow-Origin": "*", // Or your frontend origin
+        "Access-Control-Allow-Origin": "https://miranoil.com", // Allow your frontend domain here
       },
     });
   } catch (error) {
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
       {
         status: 500,
         headers: {
-          "Access-Control-Allow-Origin": "*", // Same here
+          "Access-Control-Allow-Origin": "https://miranoil.com", // Allow your frontend domain here
         },
       }
     );
