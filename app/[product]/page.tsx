@@ -7,10 +7,10 @@ import {
    TableHeader,
    TableRow,
 } from "@/components/ui/table";
-import Image from "next/image";
 import { Metadata } from "next";
 import React from "react";
 import { productsDetail } from "@/consts/products";
+import Image from "next/image";
 
 type Product = {
    id: number;
@@ -42,11 +42,12 @@ export async function generateMetadata({
    params,
 }: PageProps): Promise<Metadata> {
    const product = (await params).product;
+   console.log(product);
    const productId = parseInt(product);
 
    try {
       const response = await fetch(
-         `${process.env.URL_PREFIX}/products/${productId}`
+         `${process.env.NEXT_PUBLIC_URL_PREFIX}/products/${productId}`
       );
       const data = await response.json();
 
@@ -79,7 +80,7 @@ const Page = async ({ params }: PageProps) => {
 
    try {
       const response = await fetch(
-         `${process.env.URL_PREFIX}/products/${productId}`
+         `${process.env.NEXT_PUBLIC_URL_PREFIX}/products/${productId}`
       );
 
       if (!response.ok) throw new Error("Failed to fetch product");

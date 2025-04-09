@@ -41,7 +41,7 @@ const Nav = () => {
                FAQ
             </Link>
             <Link
-               href="#contact"
+               href="contact-us"
                className="text-white hover:text-[#e7c87f]"
             >
                Contact
@@ -95,7 +95,7 @@ const Nav = () => {
                      FAQ
                   </Link>
                   <Link
-                     href="#contact"
+                     href="contact-us"
                      className="text-white hover:text-[#e7c87f]"
                      onClick={() => setMenuOpen(false)}
                   >

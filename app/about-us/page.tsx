@@ -1,12 +1,11 @@
 import Link from "next/link";
 import TeamMembers from "../_components/TeamMembers";
 
-export const dynamic = "force-dynamic";
-
 const page = async () => {
-   const teamData = await fetch(`${process.env.URL_PREFIX}/team`, {}).then(
-      (res) => res.json()
-   );
+   const teamData = await fetch(
+      `${process.env.NEXT_PUBLIC_URL_PREFIX}/team`,
+      {}
+   ).then((res) => res.json());
 
    return (
       <div className="mt-20 flex flex-col space-y-8 px-8 mb-4">

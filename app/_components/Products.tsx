@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,6 +7,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProductProps {
    id: number;
