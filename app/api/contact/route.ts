@@ -47,7 +47,7 @@ export async function POST(req: Request) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: "mail.miranoil.com",
+    host: "nphost1.farswp.com",
     port: 465,
     secure: true,
     auth: {

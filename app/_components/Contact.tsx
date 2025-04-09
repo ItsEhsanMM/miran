@@ -56,8 +56,12 @@ const Contact = () => {
 
          toast.success("Message sent successfully! ✅");
          form.reset();
-      } catch (error: any) {
-         toast.error(`Failed to send message: ${error.message}`);
+      } catch (error: Error | unknown) {
+         if (error instanceof Error) {
+            toast.error(`Failed to send message: ${error.message}`);
+         } else {
+            toast.error("An unexpected error occurred.");
+         }
       }
    };
 

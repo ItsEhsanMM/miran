@@ -15,7 +15,7 @@ const TeamImage = ({ alt, role, src }: Props) => {
             alt={alt}
             width={512}
             height={512}
-            className="rounded-full"
+            className="rounded-full max-w-40"
          />
          <h5>{alt}</h5>
          <h6 className="text-foreground">{role}</h6>
